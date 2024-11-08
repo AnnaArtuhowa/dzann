@@ -5,6 +5,8 @@ classDiagram
     class AppleSlice
     class AppleSliceIterator
     class AppleAggregate
+    class Iterator
+    class Iterable
 
     AppleSliceIterator --|> Iterator : Inherits
     AppleAggregate --|> Iterable : Inherits
