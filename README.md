@@ -15,7 +15,7 @@ classDiagram
     }
 
     class AppleAggregate {
-        + _slices: List<AppleSlice>
+        
         + amount_slices(): int
         + __iter__()
         + get_reverse_iterator()
