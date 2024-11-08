@@ -11,4 +11,5 @@ classDiagram
     class AppleAggregate {  
     }
 
- 
+AppleAggregate o-- "0..*" AppleSlice : Contains
+
