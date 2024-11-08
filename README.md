@@ -1,19 +1,25 @@
 ```mermaid
 classDiagram
-    direction LR
-
     class AppleSlice {
+        - int number
+        + __str__() str
     }
 
     class AppleSliceIterator {
+        - List~AppleSlice~ _apple
+        - int _index
+        - bool _reverse
+        + __next__() AppleSlice
     }
 
-    class AppleAggregate {  
+    class AppleAggregate {
+        - List~AppleSlice~ _slices
+        + amount_slices() int
+        + __iter__() AppleSliceIterator
+        + get_reverse_iterator() AppleSliceIterator
     }
 
-AppleAggregate o-- "0..*" AppleSlice : Contains
-AppleAggregate --> AppleSliceIterator : Uses
-AppleSliceIterator --> AppleSlice : Iterates over
-AppleSliceIterator --|> Iterator : Inherits
-AppleAggregate --|> Iterable : Inherits
- 
+    %% Взаємозв'язки між класами
+    AppleAggregate o-- AppleSlice : композиція
+    AppleAggregate --> AppleSliceIterator : створює
+    AppleSliceIterator --> AppleSlice : агрегація
