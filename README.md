@@ -12,4 +12,8 @@ classDiagram
     }
 
 AppleAggregate o-- "0..*" AppleSlice : Contains
-
+AppleAggregate --> AppleSliceIterator : Uses
+AppleSliceIterator --> AppleSlice : Iterates over
+AppleSliceIterator --|> Iterator : Inherits
+AppleAggregate --|> Iterable : Inherits
+ 
