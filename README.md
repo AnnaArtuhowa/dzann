@@ -1,4 +1,4 @@
-classDiagram
+```classDiagram
     direction TB
 
     class AppleSlice {
